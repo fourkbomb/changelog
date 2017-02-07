@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LineageOS Changelog</title>
+         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+         <link rel="stylesheet" href="static/site.css">
+         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <meta name="theme-color" content="#167C80">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">LineageOS Changelogs</a>
+                <ul id="slide-out" class="side-nav fixed">
+                    <li>
+                        <div class="userView">
+                            <div class="background">
+                                <img src="https://github.com/LineageOS/android_packages_apps_CMWallpapers/blob/cm-14.1/res/drawable-hdpi/iconoclast.png?raw=true">
+                            </div>
+                            <a href="#"><span class="white-text name">Devices</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+        {% block content %}
+        {% endblock %}
+        </main>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 LineageOS. Licensed under Apache 2.0.
+                <a class="grey-text text-lighten-4 right" href="https://github.com/lineageos/lineageos_updater">Source</a>
+            </div>
+        </div>
+        </footer>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+        {% block script %}
+        {% endblock %}
+        <script type="text/javascript">
+        $(".button-collapse").sideNav();
+        </script>
+    </body>
+</html>
