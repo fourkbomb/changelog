@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 {% block script %}
+<script>
+device = "{{ device }}"
+</script>
 <script type="text/javascript" src="static/js/main.js" ></script>
 {% endblock %}
 {% block content %}
 <div class="container">
-<table class="striped">
-<thead>
-    <tr>
-        <th>Message</th>
-        <th>Project</th>
-        <th>Submitted</th>
-    </tr>
-</thead>
-<tbody id="change-table">
-    <tr>
-        <td colspan="3">Loading...</td>
-    </tr>
-</tbody>
-</table>
+    <div id="changes" class="collection with-header">
+        {% if device == "all" %}
+        {% set device = "all devices" %}
+        {% endif %}
+        <li class="collection-header"><h4>Changes for {{ device }}</h4></li>
+        <li class="collection-item">Loading...</li>
+    </div>
+
 </div>
 {% endblock %}

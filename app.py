@@ -24,7 +24,6 @@ app.json_encoder = GerritJSONEncoder
 updater = Updater(app.config['UPDATER_URL'])
 gerrit = GerritServer(app.config['GERRIT_URL'])
 
-
 def get_changes(device=None, before=-1):
     if device is not None:
         last_release = updater.get(device)['date']
@@ -41,7 +40,7 @@ def get_changes(device=None, before=-1):
         query += ' before:' + datetime_to_gerrit(datetime.fromtimestamp(before))
 
     changes = gerrit.changes(query=query, n=50, limit=50)
-    
+
     nightly_changes = []
 
     for c in changes:
@@ -69,6 +68,6 @@ def changes(device='all', before=-1):
 
 @app.route('/')
 def index():
-    return render_template('changes.html')
+    return render_template('changes.html', device='all')
 
 
