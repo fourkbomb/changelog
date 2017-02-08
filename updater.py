@@ -22,12 +22,12 @@ class Updater:
     def __init__(self, url='https://download.lineageos.org'):
         self.url = url
 
-    def _do_request(path, params=None):
+    def _do_request(self, path, params=None):
         res = requests.get(self.url + path, params=params)
         return res.json()
 
-    def get(device, romtype='nightly'):
-        return [Rom(i) for i in _do_request('/api/v1/%s/%s/abc'%(device, romtype))['response']]
+    def get(self, device, romtype='nightly'):
+        return [Rom(i) for i in self._do_request('/api/v1/%s/%s/abc'%(device, romtype))['response']]
 
 
 class Rom:

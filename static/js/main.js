@@ -54,7 +54,7 @@ function renderChanges(data, textStatus, xhr) {
 }
 
 $(document).ready(function() {
-    $.getJSON('api/v1/changes/all', null, function(data, textStatus, xhr) {
+    $.getJSON('/api/v1/changes/' + device + '/', null, function(data, textStatus, xhr) {
         // remove "loading"
         $('#changes .collection-item').remove();
         renderChanges(data, textStatus, xhr);
